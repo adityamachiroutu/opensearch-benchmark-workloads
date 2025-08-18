@@ -60,4 +60,44 @@
         {{ benchmark.collect(parts="common/force-merge-schedule.json") }},
         {{ benchmark.collect(parts="common/search-only-schedule.json") }}
     ]
+},
+{
+  "name": "one-click-1-defaults-no-train",
+  "description": "Default no train.",
+  "default": false,
+  "schedule": [
+    {{ benchmark.collect(parts="common/index-only-schedule.json") }},
+    {{ benchmark.collect(parts="common/force-merge-schedule.json") }},
+    {{ benchmark.collect(parts="common/multi-search-schedule.json") }}
+  ]
+},
+{
+  "name": "one-click-1-defaults-train",
+  "description": "Default  train.",
+  "default": false,
+  "schedule": [
+    {{ benchmark.collect(parts="common/train-index-only-schedule.json") }},
+    {{ benchmark.collect(parts="common/train-model-schedule.json") }},
+    {{ benchmark.collect(parts="common/force-merge-schedule.json") }},
+    {{ benchmark.collect(parts="common/multi-search-schedule.json") }}
+  ]
+},
+{
+  "name": "one-click-1-defaults-no-train-no-merge",
+  "description": "Default no train. No merge",
+  "default": false,
+  "schedule": [
+    {{ benchmark.collect(parts="common/index-only-schedule.json") }},
+    {{ benchmark.collect(parts="common/multi-search-schedule.json") }}
+  ]
+},
+{
+  "name": "one-click-1-defaults-train-no-merge",
+  "description": "Default train. No merge",
+  "default": false,
+  "schedule": [
+    {{ benchmark.collect(parts="common/train-index-only-schedule.json") }},
+    {{ benchmark.collect(parts="common/train-model-schedule.json") }},
+    {{ benchmark.collect(parts="common/multi-search-schedule.json") }}
+  ]
 }
