@@ -29,7 +29,6 @@
         "type": "knn_vector",
         "dimension": {{ target_index_dimension }},
         "space_type": "{{ target_index_space_type }}",
-        {%- if mode is defined and mode %}
         , "mode": {{ mode }},
         "compression_level": "{{ compression_level }}",
         "method": {
