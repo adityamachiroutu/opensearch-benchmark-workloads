@@ -33,7 +33,7 @@
         "method": {
           "name": "hnsw",
           "space_type": "{{ target_index_space_type }}",
-          "engine": "{{ engine }}",
+          "engine": "{{ engine }}"
         }
       }
     }
