@@ -1,15 +1,15 @@
 {
-    "settings": {
-        "index": {
-        "queries.cache.enabled": false,
-        "requests.cache.enable": false,
-        "knn": true
-        {%- if target_index_primary_shards is defined and target_index_primary_shards %}
-        ,"number_of_shards": {{ target_index_primary_shards }}
-        {%- endif %}
-        {%- if target_index_replica_shards is defined %}
-        ,"number_of_replicas": {{ target_index_replica_shards }}
-        {%- endif %}
+  "settings": {
+    "index": {
+      "queries.cache.enabled": false,
+      "requests.cache.enable": false,
+      "knn": true
+      {%- if target_index_primary_shards is defined and target_index_primary_shards %}
+      ,"number_of_shards": {{ target_index_primary_shards }}
+      {%- endif %}
+      {%- if target_index_replica_shards is defined %}
+      ,"number_of_replicas": {{ target_index_replica_shards }}
+      {%- endif %}
     }
   },
   "mappings": {
@@ -28,12 +28,12 @@
       "target_field": {
         "type": "knn_vector",
         "dimension": {{ target_index_dimension }},
-        "space_type": "{{ target_index_space_type }}",
-        , "mode": {{ mode }},
+        "mode": "{{ mode }}",
         "compression_level": "{{ compression_level }}",
         "method": {
           "name": "hnsw",
-          "engine": "{{ engine }}"
+          "space_type": "{{ target_index_space_type }}",
+          "engine": "{{ engine }}",
         }
       }
     }
