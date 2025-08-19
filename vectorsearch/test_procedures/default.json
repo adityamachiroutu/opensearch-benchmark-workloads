@@ -1,4 +1,3 @@
-[
 {
   "name": "no-train-test",
   "description": "Index vector search which does not use an algorithm that requires training.",
@@ -72,4 +71,3 @@
     {{ benchmark.collect(parts="common/search-only-schedule.json") }}
   ]
 }
-]
